@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import Weather from './Weather.js';
 import './App.css';
 
 function App() {
@@ -16,7 +17,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+
+        <Weather/>
+
         </a>
       </header>
     </div>
