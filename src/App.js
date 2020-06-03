@@ -13,7 +13,7 @@ function App() {
         <h4>by JUAN AND MISSY</h4>
       </header>   
          {/* current weather */}
-      {/* <Forecast/> */}
+      <Forecast/>
 
       {/* multiday forecast - 5 days, every 3 hours */}
       {/* goes here */}
