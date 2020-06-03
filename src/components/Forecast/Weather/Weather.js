@@ -4,7 +4,7 @@ import './App.css';
 
 //API connection: api.openweathermap.org/data/2.5/weather?q={city name}&appid={your api key}
 
-//API key: e380d21626d076dd171c1a9816790db7
+
 
 class Weather extends React.Component {
     constructor(props) {

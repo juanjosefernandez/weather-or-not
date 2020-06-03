@@ -25,76 +25,77 @@ const Forecast = () => {
         setLoading(true);
        
         let uriEncodedCity = encodeURIComponent(city);
-     
-     fetch(`https://community-open-weather-map.p.rapidapi.com/weather?units=${unit}&q=${uriEncodedCity}`, {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-                "x-rapidapi-key": "apikey"
-            }
-        })
-        .then(response => response.json())
-        .then(response => {
-            if (response.cod !== 200) {
-                throw new Error()
-            }
-     
-            setResponseObj(response);
-            setLoading(false);
-        })
-        .catch(err => {
-            setError(true);
-            setLoading(false);
-            console.log(err.message);
-        });
-     }
 
-    return (
-        <div>
-            <h2>Find Current Weather Conditions</h2>
-                <form onSubmit={getForecast}>
-                    <input
-                        type="text"
-                        placeholder="Enter City"
-                        maxLength="50"
-                        className={classes.textInput}
-                        value={city}
-                        onChange={(e) => setCity(e.target.value)}
-                        />
-                        <br></br>
-                    <label className = {classes.Radio}>
+        fetch(`https://community-open-weather-map.p.rapidapi.com/weather?units=${unit}&q=${uriEncodedCity}`, {
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
+                    "x-rapidapi-key": process.env.REACT_APP_API_KEY
+        
+                }
+            })
+            .then(response => response.json())
+            .then(response => {
+                if (response.cod !== 200) {
+                    throw new Error()
+                }
+        
+                setResponseObj(response);
+                setLoading(false);
+            })
+            .catch(err => {
+                setError(true);
+                setLoading(false);
+                console.log(err.message);
+            });
+        }
+
+        return (
+            <div>
+                <h2>Find Current Weather Conditions</h2>
+                    <form onSubmit={getForecast}>
                         <input
-                            type="radio"
-                            name="units"
-                            checked={unit === "imperial"}
-                            value="imperial"
-                            onChange={(e) => setUnit(e.target.value)}
+                            type="text"
+                            placeholder="Enter City"
+                            maxLength="50"
+                            className={classes.textInput}
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
                             />
-                        Fahrenheit
-                    </label>
-                    <label className = {classes.Radio}>
-                        <input
-                            type="radio"
-                            name="units"
-                            checked={unit === "metric"}
-                            value="metric"
-                            onChange={(e) => setUnit(e.target.value)}
-                            />
-                        Celcius
-                    </label>
+                            <br></br>
+                        <label className = {classes.Radio}>
+                            <input
+                                type="radio"
+                                name="units"
+                                checked={unit === "imperial"}
+                                value="imperial"
+                                onChange={(e) => setUnit(e.target.value)}
+                                />
+                            Fahrenheit
+                        </label>
+                        <label className = {classes.Radio}>
+                            <input
+                                type="radio"
+                                name="units"
+                                checked={unit === "metric"}
+                                value="metric"
+                                onChange={(e) => setUnit(e.target.value)}
+                                />
+                            Celcius
+                        </label>
 
-                    <button className={classes.Button} type="submit">Get Forecast</button>
+                        <button className={classes.Button} type="submit">Get Forecast</button>
 
-                </form>
-               
-           <Conditions
-              responseObj={responseObj}
-              error={error} //new
-              loading={loading} //new
-              />
+                    </form>
+                
+            <Conditions
+                responseObj={responseObj}
+                error={error} //new
+                loading={loading} //new
+                />
 
-        </div>
-    )
+            </div>
+        )
 }
 
 export default Forecast;
