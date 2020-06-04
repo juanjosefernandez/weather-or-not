@@ -11,12 +11,16 @@ DONE
 0.0 We can work on branches of what is on Github.
 0. Design Branch
 0.0 API branch
+0. Connect with the API to get the information we want.
+
 
 PLAN
-0. Connect with the API to get the information we want.
 
 1. Make a simple UI that we want to code in Figma.
 1.1 Build the pretty code.
+
+0. Tinker with the 7 day forecast API call so that users can put in their zipcode and their latitude and longitude are calculated.
+0.0 use https://www.zipcodeapi.com/
 
 2. Make the API display in the pretty code.
 
