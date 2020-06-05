@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ConditionsTwo from '../ConditionsTwo/ConditionsTwo';
+import Conditions from '../Conditions/Conditions';
 import classes from './Multiday.module.css';
 
 const Multiday = () => {
@@ -107,7 +107,7 @@ const Multiday = () => {
 
                     </form>
                 
-             <ConditionsTwo
+             <Conditions
                 responseObj={responseObj}
                 error={error} //new
                 loading={loading} //new

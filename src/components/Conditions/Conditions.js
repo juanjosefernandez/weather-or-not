@@ -1,22 +1,35 @@
 import React from 'react';
-import Humidity from '../Humidity/Humidity';
+import Strip from '../Strip/Strip';
 import classes from './Conditions.module.css'
-const conditions = (props) => {
-    // let humidity;
+const Conditions = (props) => {
+    // let dayOneData = props.responseObj.list[0];
+    // let dayTwoData;
+    // let dayThreeData;
+    // let dayFourData;
+    // let dayFiveData;
+
     return (
        <div className={classes.Wrapper}>
-           {props.error && <small className={classes.Small}>Please enter a valid city.</small>}
+        {/* <Strip className="StripOne" day={responseObj.daily[0]}/>  */}
+        {/* <Strip whichStrip="StripOne" data = {dayOneData}/>  */}
+        <Strip whichStrip="StripOne"/> 
+        <Strip whichStrip="StripTwo"/> 
+        <Strip whichStrip="StripThree"/> 
+        <Strip whichStrip="StripFour"/> 
+        <Strip whichStrip="StripFive"/> 
+
+           {/* {props.error && <small className={classes.Small}>Please enter a valid city.</small>}
            {props.loading && <div className={classes.Loader} />}
            {props.responseObj.cod === 200 ?
                <div>
                     {/* {humidity = props.responseObj.main.humidity} */}
-                    <p><strong>{props.responseObj.name}</strong></p>
-                    <p>It is currently {Math.round(props.responseObj.main.temp)} degrees out with {props.responseObj.weather[0].description}.</p>
-                    <Humidity value={props.responseObj.main.humidity} sillyFart="wow,stinky"/>
-               </div>
-           : null
-           }
+                    {/* <p><strong>{props.responseObj.id}</strong></p> */}
+                    {/* <p><strong>{JSON.stringify(props.responseObj)}</strong></p> */}
+           
+               {/* </div> */}
+        {/* //    : null */}
+           {/* }  */}
        </div>
    )
 }
-export default conditions;
+export default Conditions;

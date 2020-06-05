@@ -7,17 +7,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Logo />
-        <h1>Weather-Or-Not</h1>
-        <h4>by JUAN AND MISSY</h4>
-      </header>   
-         {/* current weather */}
-      <Forecast/>
 
-      {/* multiday forecast - 5 days, every 3 hours */}
-      {/* goes here */}
+      <div>TITLE BAR </div>
       <Multiday/>  
+
     </div>
   );
 }
