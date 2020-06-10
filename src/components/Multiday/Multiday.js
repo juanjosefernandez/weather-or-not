@@ -11,6 +11,7 @@ const Multiday = () => {
     // const uriEncodedCity = encodeURIComponent(city);
     let [responseObj, setResponseObj] = useState({});
 
+
        
 
     function getMultiDay(e) {
@@ -49,24 +50,8 @@ const Multiday = () => {
 
             })
             .catch(function() {
-            // catch any errors
             });
-        // .then(response => response.json()
-        // )
-        // .then(response => {
-        //     console.log(response.cod);
-        //     if (response.cod !== 200) {
-        //         throw new Error()
-        //     }
-        //     console.log("above line 45");
-        //     setResponseObj(response);
-        //     setLoading(false);
-        // })
-        // .catch(err => {
-        //     setError(true);
-        //     setLoading(false);
-        //     console.log(err);
-        // });
+
 
         }
 

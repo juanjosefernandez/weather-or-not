@@ -14,8 +14,7 @@ const Conditions = (props) => {
         {/* <Strip whichStrip="StripOne" data = {dayOneData}/>  */}
         
         {/* prints out the contents of responseObj to help us see if it is null or not */}
-        <Strip whichStrip="StripOne" responseObj={props.responseObj}/> 
-        {/* <p>{JSON.stringify(props.responseObj)}</p> */}
+        <Strip whichStrip="StripOne" responseObj={props.responseObj} loading={props.loading}/> 
         <Strip whichStrip="StripTwo"/> 
         <Strip whichStrip="StripThree"/> 
         <Strip whichStrip="StripFour"/> 
