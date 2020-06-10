@@ -29,8 +29,6 @@ const Multiday = () => {
         weatherBalloon( 6167865 );
         
         e.preventDefault();
-     
-
         // Clear state in preparation for new data
         setError(false);
         setResponseObj({});
@@ -96,7 +94,7 @@ const Multiday = () => {
                         <button className={classes.Button} type="submit">Get Forecast</button>
 
                     </form>
-                
+
              <Conditions
                 responseObj={responseObj}
                 error={error} //new

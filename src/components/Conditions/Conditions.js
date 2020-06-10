@@ -12,7 +12,10 @@ const Conditions = (props) => {
        <div className={classes.Wrapper}>
         {/* <Strip className="StripOne" day={responseObj.daily[0]}/>  */}
         {/* <Strip whichStrip="StripOne" data = {dayOneData}/>  */}
-        <Strip whichStrip="StripOne"/> 
+        
+        {/* prints out the contents of responseObj to help us see if it is null or not */}
+        <Strip whichStrip="StripOne" responseObj={props.responseObj}/> 
+        {/* <p>{JSON.stringify(props.responseObj)}</p> */}
         <Strip whichStrip="StripTwo"/> 
         <Strip whichStrip="StripThree"/> 
         <Strip whichStrip="StripFour"/> 
