@@ -9,7 +9,7 @@ const Conditions = (props) => {
     // let dayFiveData;
 
     return (
-       <div className={classes.Wrapper}>
+       <div>
         {/* <Strip className="StripOne" day={responseObj.daily[0]}/>  */}
         {/* <Strip whichStrip="StripOne" data = {dayOneData}/>  */}
         
