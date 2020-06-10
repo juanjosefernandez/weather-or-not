@@ -10,24 +10,25 @@ const Multiday = () => {
     let [loading, setLoading] = useState(false);
     // const uriEncodedCity = encodeURIComponent(city);
     let [responseObj, setResponseObj] = useState({});
+    let [safe, setSafe] = useState(false);
 
 
        
 
     function getMultiDay(e) {
 
-        function weatherBalloon( cityID ) {
-            var key = '{yourkey}';
-            fetch('https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&exclude=minutely,hourly&units=imperial&appid=de21f1eaf5bf29f1eb059f7f97f70b23')  
-            .then(function(resp) { return resp.json() }) // Convert data to json
-            .then(function(data) {
-            console.log("weatherballoon:", JSON.stringify(data.current.temp));
-            })
-            .catch(function() {
-            // catch any errors
-            });
-        }
-        weatherBalloon( 6167865 );
+        // function weatherBalloon( cityID ) {
+        //     var key = '{yourkey}';
+        //     fetch('https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&exclude=minutely,hourly&units=imperial&appid=de21f1eaf5bf29f1eb059f7f97f70b23')  
+        //     .then(function(resp) { return resp.json() }) // Convert data to json
+        //     .then(function(data) {
+        //     console.log("weatherballoon:", JSON.stringify(data.current.temp));
+        //     })
+        //     .catch(function() {
+        //     // catch any errors
+        //     });
+        // }
+        // weatherBalloon( 6167865 );
         
         e.preventDefault();
         // Clear state in preparation for new data
@@ -44,6 +45,7 @@ const Multiday = () => {
         .then(response => {  
             setResponseObj(response);
             setLoading(false);
+            setSafe(true);
         })  
         .then(function(data) {
             console.log("weatherballoon:", JSON.stringify(data.current.temp));
@@ -84,6 +86,7 @@ const Multiday = () => {
                 responseObj={responseObj}
                 error={error} //new
                 loading={loading} //new
+                safe={safe}
                 />
 
             </div>
