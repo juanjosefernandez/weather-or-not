@@ -1,6 +1,7 @@
 import React from 'react';
 import './Strip.css'
 
+//ANOTHER COMMENT
 const Strip = (props) => {
     let boolean = true;
 
