@@ -2,7 +2,9 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import PropTypes from "prop-types";
 
-const Rainbowfy = ({ children, font, fontSize, fontWeight}) => {
+const Rainbowfy = ({ children, font, fontSize, fontWeight, start}) => {
+
+
 	const rainbow = keyframes`
 		0% {
     	filter: hue-rotate(0deg);
@@ -17,9 +19,10 @@ const Rainbowfy = ({ children, font, fontSize, fontWeight}) => {
 		font-weight: ${fontWeight};
 		background-image: -webkit-linear-gradient(
 			120deg,
-			rgb(220, 64, 48),
-			rgb(255, 206, 51),
-			rgb(112, 183, 76)
+			rgb(200, 64, 48),
+			rgb(255, 65, 10),
+			rgb(112, 183, 90)
+
 		);
 		-webkit-text-fill-color: transparent;
 		-webkit-background-clip: text;

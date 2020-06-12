@@ -1,6 +1,7 @@
 import React from 'react';
 import Strip from '../Strip/Strip';
 import classes from './Conditions.module.css'
+import Rainbowfy from '../rainbowfy/rainbowfy';
 
 
 const Conditions = (props) => {
@@ -21,6 +22,8 @@ const Conditions = (props) => {
             <Strip whichStrip="StripThree"/> 
             <Strip whichStrip="StripFour"/> 
             <Strip whichStrip="StripFive"/> 
+
+            
 
            {/* {props.error && <small className={classes.Small}>Please enter a valid city.</small>}
            {props.loading && <div className={classes.Loader} />}

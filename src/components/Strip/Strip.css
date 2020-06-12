@@ -14,16 +14,15 @@ background-color:rgb(23, 241, 245);
     padding: 10px;
     letter-spacing: 3px;
     text-align: center;
-    text-shadow: 10px, coral;
     font-size: 25px;
 }
 
 .zoom {
         padding: 50px;
-        background-color: green;
-        transition: transform .2s; /* Animation */
-        width: 200px;
-        height: 200px;
+        
+        transition: transform 1s; /* Animation */
+        /* width: 200px;
+        height: 200px; */
         margin: 0 auto;
       }
       
@@ -34,23 +33,27 @@ background-color:rgb(23, 241, 245);
 .StripTwo{
     background-color: rgb(234, 255, 7);
     padding: 10px;
+    text-align: center;
 
 }
 
 .StripThree{
     background-color: rgb(8, 215, 111);
     padding: 10px;
+    text-align: center;
 
 }
 
 .StripFour{
     background-color: rgb(55, 125, 247);
     padding: 10px;
+    text-align: center;
 
 }
 
 .StripFive{
     background-color: rgb(172, 32, 242);
     padding: 10px;
+    text-align: center;
 
 }

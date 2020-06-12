@@ -4,11 +4,12 @@ import './Strip.css'
 //ANOTHER COMMENT
 const Strip = (props) => {
     let boolean = true;
-
+    let theClassString = props.whichStrip + " zoom";
     return(
-        <div > 
+        <div >
             <container>
-                <section className={props.whichStrip}>
+
+                <section className={theClassString}>
                 {/* <p className="temperature">Hi Temperature:</p> */}
                 {/* where we use the data from the API call, only render it IF the API call has been successful */}
                 {/* {props.safe ? 'safe' : 'unsafe'} */}

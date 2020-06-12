@@ -19,13 +19,21 @@
 
 .Button {
     display: block;
-    margin: 10px auto;
-    padding: .5rem;
-    font-size: 1em;
-    background: darkcyan;
+    background: rgb(8, 197, 240);
     border-radius: 5px;
-    color: white;
+    color:red;
     cursor: pointer;
     margin: 5px auto;
-
+    border: 2px solid #f2f9fe;
+    padding: 20px 50px;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    /* box-shadow: 0 3px 5px #aaa; */
+    border-radius: 70% 40% 90% 20%;
 }
+    
+
+    /* where the magic happens */
+
+  

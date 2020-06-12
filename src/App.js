@@ -11,9 +11,12 @@ function App() {
     
       <Rainbowfy>
       <div className="Title">WEATHER - OR - NOT </div>
-      <p>by MISSY & JUAN !</p>
+      <p className="Authors">by MISSY & JUAN !</p>
       </Rainbowfy>
       <Rainbowfy></Rainbowfy>
+
+      <div id = "cloud"><span class='shadow'></span></div>
+
       <Multiday/>  
 
     </div>

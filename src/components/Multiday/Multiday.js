@@ -12,6 +12,8 @@ const Multiday = () => {
     // const uriEncodedCity = encodeURIComponent(city);
     let [responseObj, setResponseObj] = useState({});
     let [safe, setSafe] = useState(false);
+    let [unicorn, setUnicorn] = useState(false);
+
 
 
        
@@ -63,6 +65,12 @@ const Multiday = () => {
             // sets longitude based on city
             return; 
         }
+
+        function pushCloud(e){
+            e.preventDefault();
+            console.log("printing ", e.target);
+            setUnicorn(true);
+        }
     
 
         return (
@@ -79,9 +87,11 @@ const Multiday = () => {
                             />
                             <br></br>
 
-                        <button className={classes.Button} type="submit">Get Forecast</button>
+                        <button id = "cloud" class={classes.Button} type="submit" onClick={pushCloud}>{unicorn ? "🦄":"Get Forecast"}</button>
+                        <span class='shadow'></span>
 
                     </form>
+                    {/* <div id = "cloud"><span class='shadow'></span></div> */}
 
              <Conditions
                 responseObj={responseObj}
