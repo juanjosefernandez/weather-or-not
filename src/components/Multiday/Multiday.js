@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Conditions from '../Conditions/Conditions';
 import classes from './Multiday.module.css';
 
+
 const Multiday = () => {
 
     let [city, setCity] = useState('');
@@ -66,7 +67,7 @@ const Multiday = () => {
 
         return (
             <div>
-                <h2>Find Current Weather Conditions</h2>
+                <h2 className="Description"></h2>
                     <form onSubmit={getMultiDay}>
                         <input
                             type="text"

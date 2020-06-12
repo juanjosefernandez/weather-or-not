@@ -1,6 +1,8 @@
 import React from 'react';
 import Strip from '../Strip/Strip';
 import classes from './Conditions.module.css'
+
+
 const Conditions = (props) => {
     // let dayOneData = props.responseObj.list[0];
     // let dayTwoData;
@@ -9,16 +11,16 @@ const Conditions = (props) => {
     // let dayFiveData;
 
     return (
-       <div>
+       <div className="container">
         {/* <Strip className="StripOne" day={responseObj.daily[0]}/>  */}
         {/* <Strip whichStrip="StripOne" data = {dayOneData}/>  */}
         
         {/* prints out the contents of responseObj to help us see if it is null or not */}
-        <Strip whichStrip="StripOne" responseObj={props.responseObj} safe={props.safe} loading={props.loading}/> 
-        <Strip whichStrip="StripTwo"/> 
-        <Strip whichStrip="StripThree"/> 
-        <Strip whichStrip="StripFour"/> 
-        <Strip whichStrip="StripFive"/> 
+            <Strip whichStrip="StripOne" responseObj={props.responseObj} safe={props.safe} loading={props.loading}/> 
+            <Strip whichStrip="StripTwo"/> 
+            <Strip whichStrip="StripThree"/> 
+            <Strip whichStrip="StripFour"/> 
+            <Strip whichStrip="StripFive"/> 
 
            {/* {props.error && <small className={classes.Small}>Please enter a valid city.</small>}
            {props.loading && <div className={classes.Loader} />}

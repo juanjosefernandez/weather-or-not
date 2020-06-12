@@ -18,7 +18,9 @@ const Strip = (props) => {
                 {/* <p>{JSON.stringify(props.responseObj)}</p> */}
                 {/* <p>Lo Temperature</p> */}
                 {/* <p>Weather Conditions Description</p> */}
-                <p>Day of the Week + Date</p>
+               
+                    <p>Day of the Week + Date</p>
+                    
                 </section>
             </container>    
         </div>
