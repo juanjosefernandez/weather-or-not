@@ -8,16 +8,20 @@ import Rainbowfy from 'react-rainbowfy';
 function App() {
   return (
     <div className="App">
-    
+
       <Rainbowfy>
-      <div className="Title">WEATHER - OR - NOT </div>
-      <p className="Authors">by MISSY & JUAN !</p>
+      <div className="Title">WEATHER - OR - NOT </div> 
+      {/* <p className="Authors">by MISSY & JUAN !</p> */}
+
       </Rainbowfy>
-      <Rainbowfy></Rainbowfy>
+      {/* <Rainbowfy> where r u?</Rainbowfy> */}
+      <Multiday/> 
 
-      <div id = "cloud"><span class='shadow'></span></div>
+      {/* <div id = "cloud"><span class='shadow'></span></div> */}
 
-      <Multiday/>  
+       
+
+      
 
     </div>
   

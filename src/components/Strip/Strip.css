@@ -14,11 +14,11 @@ background-color:rgb(23, 241, 245);
     padding: 10px;
     letter-spacing: 3px;
     text-align: center;
-    font-size: 25px;
+    
 }
 
 .zoom {
-        padding: 50px;
+        padding: 20px;
         
         transition: transform 1s; /* Animation */
         /* width: 200px;

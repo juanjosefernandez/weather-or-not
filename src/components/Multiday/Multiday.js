@@ -75,22 +75,23 @@ const Multiday = () => {
 
         return (
             <div>
-                <h2 className="Description"></h2>
+               
                     <form onSubmit={getMultiDay}>
-                        <input
+                        <input classname="citytext"
                             type="text"
-                            placeholder="Enter City"
+                            placeholder="What CITY please?"
                             maxLength="50"
                             className={classes.textInput}
                             value={city}
                             onChange={(e) => setCity(e.target.value)}
                             />
-                            <br></br>
+                            {/* <br></br> */}
 
                         <button id = "cloud" class={classes.Button} type="submit" onClick={pushCloud}>{unicorn ? "🦄":"Get Forecast"}</button>
                         <span class='shadow'></span>
 
                     </form>
+                    {/* second cloud code below */}
                     {/* <div id = "cloud"><span class='shadow'></span></div> */}
 
              <Conditions

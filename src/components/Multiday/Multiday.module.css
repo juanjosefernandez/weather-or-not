@@ -1,10 +1,16 @@
+.citytext {
+    color: blue;
+    display: inline-flexbox;
+}
+
 .TextInput {
     font-size: large;
-    border: 1px solid #EEEEEE;
+    border: 1px solid #f004dc;
     padding: 5px;
     border-radius: 3px;
-    display: block;
+    display: flexbox;
     margin: 5px auto;
+    
 }
 
 .TextInput:focus {
@@ -29,9 +35,9 @@
     margin: 20px;
     font-size: 20px;
     font-weight: bold;
-    /* box-shadow: 0 3px 5px #aaa; */
-    border-radius: 70% 40% 90% 20%;
-}
+    box-shadow: 0 3px 5px #aaa; 
+    border-radius: 70% 40% 90% 20%; 
+} 
     
 
     /* where the magic happens */
