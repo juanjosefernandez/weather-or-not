@@ -26,7 +26,7 @@ const Multiday = () => {
         setResponseObj({});
 
         // set lat and long
-        function setLatitudeLongitude(){
+        function setLatitudeLongitude(callback){
             //    e.preventDefault();
     
                 console.log("in setLatitudeLongitude")
@@ -62,7 +62,7 @@ const Multiday = () => {
                 // })
                 .catch(function() {
                 });
-    
+                callback();
     
                 // //sets latitude based on city
                 // setLatitude(mapResponseObj.features[0].center[1]);
@@ -73,27 +73,55 @@ const Multiday = () => {
                 return; 
             }
         
-        if(!mapSafe)
-        {
-            setLatitudeLongitude(city);
+        // if(!mapSafe)
+        // {
+            
+            // this.setState({airtableKey: e.target.value}, function () {
+            //     console.log("airtableAPI", this.state.airtableKey);
+            //   })
 
-            if(mapSafe){
-                setLoading(true);
-                fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&units=imperial&appid=de21f1eaf5bf29f1eb059f7f97f70b23`)
-                .then(response => response.json()
-                 )
-                // .then(function(resp) { return resp.json() }) // Convert data to json
-                .then(response => {  
-                    setResponseObj(response);
-                    setLoading(false);
-                    setSafe(true);
-                    console.log("Open Weather Response Object:" , JSON.stringify(responseObj));
-                })  
-                .catch(function() {
-                    });
-                }
+            setLatitudeLongitude(function () {
+                console.log("in the callback");
+                if(mapSafe){
+                    setLoading(true);
+                    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&units=imperial&appid=de21f1eaf5bf29f1eb059f7f97f70b23`)
+                    .then(response => response.json()
+                     )
+                    // .then(function(resp) { return resp.json() }) // Convert data to json
+                    .then(response => {  
+                        setResponseObj(response);
+                        setLoading(false);
+                        setSafe(true);
+                        console.log("Open Weather Response Object:" , JSON.stringify(responseObj));
+                    })  
+                    .catch(function() {
+                        });
+                    }
+                    else{
+                        console.log("MapBox didn't return a response for me when I ran this if/esle.")
+                    }
+            });
 
-        }
+            // if(mapSafe){
+            //     setLoading(true);
+            //     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&units=imperial&appid=de21f1eaf5bf29f1eb059f7f97f70b23`)
+            //     .then(response => response.json()
+            //      )
+            //     // .then(function(resp) { return resp.json() }) // Convert data to json
+            //     .then(response => {  
+            //         setResponseObj(response);
+            //         setLoading(false);
+            //         setSafe(true);
+            //         console.log("Open Weather Response Object:" , JSON.stringify(responseObj));
+            //     })  
+            //     .catch(function() {
+            //         });
+            //     }
+            //     else{
+            //         console.log("MapBox didn't return a response for me when I ran this if/esle.")
+            //     }
+
+        // }
 
        
 
