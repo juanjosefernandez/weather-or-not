@@ -13,8 +13,9 @@ const Multiday = () => {
     let [responseObj, setResponseObj] = useState({});
     let [mapResponseObj, setMapResponseObj] = useState({});
     let [safe, setSafe] = useState(false);
-    let [longitude, setLongitude] = useState(120.960518);
-    let [latitude, setLatitude] = useState(23.697809);
+    let [mapSafe, setMapSafe] =useState(false);
+    let [longitude, setLongitude] = useState();
+    let [latitude, setLatitude] = useState();
 
 
     function getMultiDay(e) {
@@ -28,7 +29,7 @@ const Multiday = () => {
         function setLatitudeLongitude(){
             //    e.preventDefault();
     
-                console.log("beep")
+                console.log("in setLatitudeLongitude")
                 let tempLat = 0;
                 let tempLong = 0;
                 setMapResponseObj({});
@@ -47,8 +48,12 @@ const Multiday = () => {
                     setMapLoading(false);
                     console.log("MapBox Response JSON Object: " , JSON.stringify(mapResponseObj));
                     console.log("MapBox Response JSON Object Longitude: " , JSON.stringify(mapResponseObj.features[0].center[0]));
-                    console.log("MapBox Response JSON Object Longitude: " , JSON.stringify(mapResponseObj.features[0].center[0]));
-                    // setSafe(true);
+                    console.log("MapBox Response JSON Object Latitude: " , JSON.stringify(mapResponseObj.features[0].center[1]));
+                    //sets latitude based on city
+                    setLatitude(mapResponseObj.features[0].center[1]);
+                    // sets longitude based on city
+                    setLongitude(mapResponseObj.features[0].center[0]);
+                    setMapSafe(true);
                 })  
                 // .then(function(data) {
                 //     // console.log("weatherballoon:", JSON.stringify(data.current.temp));
@@ -59,32 +64,38 @@ const Multiday = () => {
                 });
     
     
-                //sets latitude based on city
-    
-                // sets longitude based on city
+                // //sets latitude based on city
+                // setLatitude(mapResponseObj.features[0].center[1]);
+
+                // // sets longitude based on city
+                // setLongitude(mapResponseObj.features[0].center[0]);
     
                 return; 
             }
-        setLatitudeLongitude(city);
         
-        setLoading(true);
-        let uriEncodedCity = encodeURIComponent(city);
-        
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&units=imperial&appid=de21f1eaf5bf29f1eb059f7f97f70b23`)
-        .then(response => response.json()
-         )
-        // .then(function(resp) { return resp.json() }) // Convert data to json
-        .then(response => {  
-            setResponseObj(response);
-            setLoading(false);
-            setSafe(true);
-            console.log("Open Weather Response Object:" , JSON.stringify(responseObj));
-        })  
-        // .then(function(data) {
-        //     console.log("weatherballoon:", JSON.stringify(data.current.temp));
-        //     })
-        .catch(function() {
-            });
+        if(!mapSafe)
+        {
+            setLatitudeLongitude(city);
+
+            if(mapSafe){
+                setLoading(true);
+                fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&units=imperial&appid=de21f1eaf5bf29f1eb059f7f97f70b23`)
+                .then(response => response.json()
+                 )
+                // .then(function(resp) { return resp.json() }) // Convert data to json
+                .then(response => {  
+                    setResponseObj(response);
+                    setLoading(false);
+                    setSafe(true);
+                    console.log("Open Weather Response Object:" , JSON.stringify(responseObj));
+                })  
+                .catch(function() {
+                    });
+                }
+
+        }
+
+       
 
         }
 
