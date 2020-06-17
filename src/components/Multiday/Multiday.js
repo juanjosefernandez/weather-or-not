@@ -16,10 +16,12 @@ const Multiday = () => {
     let [mapSafe, setMapSafe] =useState(false);
     let [longitude, setLongitude] = useState();
     let [latitude, setLatitude] = useState();
+    let citycity = "";
 
 
     function getMultiDay(e) {
         console.log("boop")
+        console.log(city);
         e.preventDefault();
         // Clear state in preparation for new data
         setError(false);
@@ -27,7 +29,7 @@ const Multiday = () => {
 
         // set lat and long
         function setLatitudeLongitude(callback){
-            //    e.preventDefault();
+        //    e.preventDefault();
     
                 console.log("in setLatitudeLongitude")
                 let tempLat = 0;
@@ -60,6 +62,11 @@ const Multiday = () => {
                 //     console.log()
     
                 // })
+                .then(
+                    // console.log("FART MapBox Response JSON Object Latitude: " , JSON.stringify(mapResponseObj.features[0].center[1]))
+                    // console.log("MapBox Response JSON Object Longitude: " , JSON.stringify(mapResponseObj.features[0].center[0]));
+                    console.log("in the last THEN")
+                    )
                 .catch(function() {
                 });
                 callback();
@@ -80,9 +87,11 @@ const Multiday = () => {
             //     console.log("airtableAPI", this.state.airtableKey);
             //   })
 
-            setLatitudeLongitude(function () {
-                console.log("in the callback");
-                if(mapSafe){
+            setLatitudeLongitude(
+                
+                function () {
+                console.log("in the callback of setlatitudelongitude");
+                // if(mapSafe){
                     setLoading(true);
                     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&units=imperial&appid=de21f1eaf5bf29f1eb059f7f97f70b23`)
                     .then(response => response.json()
@@ -96,11 +105,12 @@ const Multiday = () => {
                     })  
                     .catch(function() {
                         });
-                    }
-                    else{
-                        console.log("MapBox didn't return a response for me when I ran this if/esle.")
-                    }
-            });
+                    // }
+                    // else{
+                    //     console.log("MapBox didn't return a response for me when I ran this if/esle.")
+                    // }
+                }
+            );
 
             // if(mapSafe){
             //     setLoading(true);
@@ -127,7 +137,12 @@ const Multiday = () => {
 
         }
 
-    
+    function testFunction(value, callback) {
+        // citycity = value;
+        setCity(value);
+        callback();
+        return value;
+    }
     
 
     return (
@@ -140,9 +155,23 @@ const Multiday = () => {
                         maxLength="50"
                         className={classes.textInput}
                         value={city}
-                        onChange={(e) => {
-                            setCity(e.target.value);
-                            }}
+
+                        // this.setState(
+                        //     {mailchimpKey: e.target.value}, 
+                        //     function () {console.log("mailchimpAPI", this.state.mailchimpKey);}
+                        //     );
+
+                        onChange={e => {
+                            testFunction((e.target.value), function () {console.log(city);});
+                            // console.log(city);
+                            }
+                        }
+
+                        // onChange={(e) => {
+                        //     setCity((e.target.value), function () {console.log(city);});
+                        //     // console.log(city);
+                        //     }
+                        // }
 
                         />
                         <br></br>
