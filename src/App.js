@@ -16,7 +16,8 @@ function App() {
       </Rainbowfy>
       {/* <Rainbowfy> where r u?</Rainbowfy> */}
       <Multiday/> 
-
+      
+{/* this was the bottom cloud */}
       {/* <div id = "cloud"><span class='shadow'></span></div> */}
 
        
