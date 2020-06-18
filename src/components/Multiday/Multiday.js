@@ -23,7 +23,6 @@ const Multiday = () => {
             setLoading(true);
             setSafe(false);
 
-
             var post;
 
             // Call the mapbox API
@@ -40,7 +39,7 @@ const Multiday = () => {
                 
                 // responseObj = data;
 
-                // Fetch the openweatherAPI
+                // Call the openweatherAPI
                 return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${mapBoxData.features[0].center[1]}&lon=${mapBoxData.features[0].center[0]}&exclude=minutely,hourly&units=imperial&appid=de21f1eaf5bf29f1eb059f7f97f70b23`);
 
             }).then(function (response) {
@@ -52,7 +51,8 @@ const Multiday = () => {
             }).then(function (weatherData) {
                 console.log("userData is: ", weatherData);
                 responseObj = weatherData;
-                // setResponseObj(userData);
+                setResponseObj(weatherData);
+
                 setSafe(true);
                 console.log("STORED AT RESPONSE OBJ AT THIS MOMENT: ", JSON.stringify(responseObj));
 
@@ -87,6 +87,7 @@ const Multiday = () => {
                 </form>
 
             <Conditions
+            // this component holds our strips.
             responseObj={responseObj}
             error={error} //new
             loading={loading} //new
