@@ -1,54 +1,74 @@
 .App {
-  
-  
-}
-
-
-
-.App-header { 
-  background-color: #282c34;
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
   /* color: #61dafb; */
 }
 
 .Title {
   font-size: 75px;
-  text-align: center;
+  text-align: center; 
 }
-.Authors {
-  text-align: right;
-  font-size: 40px;
-}
-
 
 body {
-	background: rgb(68, 109, 243);
+  background: rgb(68, 109, 243);
 }
+
+/* html {
+  /* overflow: hidden; */
+
+#cloud2{
+    position: absolute;
+    width:150px;
+    height:150px;
+     animation: cloud2 12s infinite;
+}
+
+@keyframes cloud2{
+  0% {top:100%; left:30%;}
+  33% {top:40; left:20%}
+  66% {top:10%; left:60%}
+  100% {top:100%; left:20%}
+}
+
+
+#sun{
+  position: absolute;
+  width:150px;
+  height:150px;
+   animation: sunrise 8s infinite;
+}
+@keyframes sunrise {
+  0% {top:90%; left:0%;}
+  33% {top:0; left:40%}
+  66% {top:30%; left:60%}
+  100% {top:100%; left:100%}
+}
+#fish{
+  position: absolute;
+  width:500px;
+  height:200px;
+  animation: cloud 3s infinite;
+}
+
+
+
 #cloud {
-	width: 350px; height: 120px;
-	
+  /* button cloud CSS */
+  width: 350px; height: 120px;
 	background: #f2f9fe;
 	background: linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
 	background: -webkit-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
 	background: -moz-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
 	background: -ms-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
 	background: -o-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
-	
 	border-radius: 100px;
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
-	
-	position: relative;
-	margin: 120px auto 20px;
+  margin: 120px auto 20px;
+  position: relative;
+  
+
+  /*  below animation controls the button cloud movement */
+  /* animation: cloud 3s infinite; */
+  
 }
 
 #cloud:after, #cloud:before {

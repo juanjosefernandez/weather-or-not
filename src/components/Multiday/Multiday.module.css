@@ -1,34 +1,37 @@
-.citytext {
-    color: blue;
-    display: inline-flexbox;
+
+.citytext{
+    display: inline-block;
+    color: red;
 }
 
-.TextInput {
-    font-size: large;
+/* .TextInput {
+    font-size: xx-large;
     border: 1px solid #f004dc;
     padding: 5px;
     border-radius: 3px;
     display: flexbox;
     margin: 5px auto;
     
-}
+} */
 
-.TextInput:focus {
+/* .TextInput:focus {
     outline: none;
     border-color: #719ECE;
     box-shadow: 0 0 10px rgb(50, 100, 153);
-}
+} */
 
-.Radio {
+/* .Radio {
     font-size: small;
-}
+} */
 
 .Button {
     display: block;
     background: rgb(8, 197, 240);
     border-radius: 5px;
     color:red;
-    cursor: pointer;
+    /* cursor: pointer; */
+   cursor: url('http://icons.iconarchive.com/icons/goodstuff-no-nonsense/free-space/96/stars-icon.png');
+
     margin: 5px auto;
     border: 2px solid #f2f9fe;
     padding: 20px 50px;
@@ -38,8 +41,69 @@
     box-shadow: 0 3px 5px #aaa; 
     border-radius: 70% 40% 90% 20%; 
 } 
+
+
     
 
-    /* where the magic happens */
+body {
+  
+    background: #eee;
+    text-align: center;
+    }
+    
+    h1 {
+    font-size: 1.5em;
+    }
+    
+    form {
+    margin-top: 2em;
+    }
+    
+    .hide {
+    position: absolute;
+    left: -10000px;
+    }
+    
+    label {
+    display: inline-block;
+    background: gray;
+    margin: 25px;
+    position: relative;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 2px;
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    }
+    
+    #happy ~ .option-happy {
+    cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto;
+    }
+    #happy:checked ~ .option-happy {
+    background: green;
+    }
+    
+    #sad ~ .option-sad {
+    cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/sad.png"), auto;
+    }
+    #sad:checked ~ .option-sad {
+    background: red;
+    }
+    
+    #meh ~ .option-meh {
+    cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/meh.png"), auto;
+    }
+    #meh:checked ~ .option-meh {
+    background: orange;
+    }
+    
+    
+    
 
   
+
+
