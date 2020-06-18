@@ -3,7 +3,9 @@
 -[x] Make it so that it works on 1 click
      Minimize the number if IF statements
 -[x] Allow user to make multiple queries
--[ ]save the openweather response object to state
+-[x]save the openweather response object to state
+-[x]requery successfully when a different city is entered
 
 ##Strips
--[ ] print out weather description, temperatures and icon
+-[ ] pass the appropriate props with their accurate changes of state based on the UI interactions you expect
+-[ ] print out weather description, temperatures and icon based on the API calls

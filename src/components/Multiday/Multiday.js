@@ -12,31 +12,36 @@ const Multiday = () => {
     let [responseObj, setResponseObj] = useState({});
     let [safe, setSafe] = useState(false);
 
-    // defining set lat and long function
-    function setLatitudeLongitude(){
-        //    e.preventDefault();
-            console.log("in setLatitudeLongitude")
-            // setMapResponseObj({});
-            // setMapLoading(true);
-            // mapbox API code goes here - 
-            console.log("what is at the weather responseObj",JSON.stringify(responseObj));
+    function getWeather(e){
+            e.preventDefault();
+            console.log("CITY UPON BUTTON PRESS: ", city);
+            // Clear state in preparation for new data
+            setError(false);
+
+            console.log("in getWeather")
+            setResponseObj({});
+            setLoading(true);
+            setSafe(false);
+
 
             var post;
 
             // Call the mapbox API
             fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${city}.json?access_token=pk.eyJ1IjoianVhbmpvc2VmZXJuYW5kZXoiLCJhIjoiY2tiaTRyNWM4MGJ1NTJ5bWx2Yzd5a3E3eSJ9.3nNSmXu7AqLrHF-MAepd-A`).then(function (response) {
                 if (response.ok) {
+                    setLoading(false);
                     return response.json();
                 } else {
                     return Promise.reject(response);
                 }
-            }).then(function (data) {
+            }).then(function (mapBoxData) {
 
                 // Store the post data to a variable
-                responseObj = data;
+                
+                // responseObj = data;
 
                 // Fetch the openweatherAPI
-                return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.features[0].center[1]}&lon=${data.features[0].center[0]}&exclude=minutely,hourly&units=imperial&appid=de21f1eaf5bf29f1eb059f7f97f70b23`);
+                return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${mapBoxData.features[0].center[1]}&lon=${mapBoxData.features[0].center[0]}&exclude=minutely,hourly&units=imperial&appid=de21f1eaf5bf29f1eb059f7f97f70b23`);
 
             }).then(function (response) {
                 if (response.ok) {
@@ -44,8 +49,13 @@ const Multiday = () => {
                 } else {
                     return Promise.reject(response);
                 }
-            }).then(function (userData) {
-                console.log(userData);
+            }).then(function (weatherData) {
+                console.log("userData is: ", weatherData);
+                responseObj = weatherData;
+                // setResponseObj(userData);
+                setSafe(true);
+                console.log("STORED AT RESPONSE OBJ AT THIS MOMENT: ", JSON.stringify(responseObj));
+
             }).catch(function (error) {
                 console.warn(error);
             });
@@ -53,44 +63,12 @@ const Multiday = () => {
             return; 
         }
 
-    function getMultiDay(e) {
-        console.log("boop")
-        console.log(city);
-        e.preventDefault();
-        // Clear state in preparation for new data
-        setError(false);
-        setResponseObj({});
-        setLatitudeLongitude(
-            
-            function () {
-            console.log("in the callback of setlatitudelongitude");
-                setLoading(true);
-                // fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&units=imperial&appid=de21f1eaf5bf29f1eb059f7f97f70b23`)
-                // .then(response => response.json()
-                //     )
-                // .then(response => {  
-                //     setResponseObj(response);
-                //     setLoading(false);
-                //     setSafe(true);
-                //     console.log("Open Weather Response Object:" , JSON.stringify(responseObj));
-                // })  
-                // .catch(function() {
-                //     });
-            }
-        )
-    }
 
-    function testFunction(value, callback) {
-        setCity(value);
-        callback();
-        return value;
-    }
-    
 
     return (
         <div>
             <h2>Find Current Weather Conditions</h2>
-                <form onSubmit={getMultiDay}>
+                <form onSubmit={getWeather}>
                     <input
                         type="text"
                         placeholder="Enter City"
@@ -98,7 +76,7 @@ const Multiday = () => {
                         className={classes.textInput}
                         value={city}
                         onChange={e => {
-                            testFunction((e.target.value), function () {console.log(city);});
+                            setCity(e.target.value)
                             }
                         }
                         />
