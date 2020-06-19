@@ -9,3 +9,10 @@
 ##Strips
 -[ ] pass the appropriate props with their accurate changes of state based on the UI interactions you expect
 -[ ] print out weather description, temperatures and icon based on the API calls
+
+0. Merge the API and Design branches
+
+1. Add button that refreshes web app - https://stackoverflow.com/questions/29884654/button-that-refreshes-the-page-on-click
+
+2. Make list of weather conditions from Open Weather API and the corresponding activities the web app suggests under those circumstances. Those are the SUGGESTIONS. IF Raining -> Then Read a Book (connects to API)
+

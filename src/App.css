@@ -1,38 +1,107 @@
 .App {
-  text-align: center;
+  /* color: #61dafb; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Title {
+  font-size: 50px;
+  text-align: center; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background: rgb(68, 109, 243);
+ 
+    
+  
+ 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+#cloud2{
+    position: absolute;
+    width:150px;
+    height:150px;
+     animation: cloud2 12s infinite;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes cloud2{
+  0% {top:100%; left:30%;}
+  33% {top:40; left:20%}
+  66% {top:10%; left:60%}
+  100% {top:100%; left:20%}
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#sun{
+  position: absolute;
+  width:150px;
+  height:150px;
+   animation: sunrise 8s infinite;
+}
+@keyframes sunrise {
+  0% {top:90%; left:0%;}
+  33% {top:0; left:40%}
+  66% {top:30%; left:60%}
+  100% {top:100%; left:100%}
+}
+
+
+#cloud {
+  /* button cloud CSS */
+  width: 350px; height: 120px;
+	background: #f2f9fe;
+	background: linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -webkit-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -moz-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -ms-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	background: -o-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+  margin: 120px auto 20px;
+  position: relative;
+  
+
+  /*  below animation controls the button cloud movement */
+  /* animation: cloud 3s infinite; */
+  
+}
+/* cloud button chunks of creation using CSS to build */
+#cloud:after, #cloud:before {
+	content: '';
+	position: absolute;
+	background: #f2f9fe;
+	z-index: -1
+}
+
+#cloud:after {
+	width: 100px; height: 100px;
+	top: -50px; left: 50px;
+	
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+}
+
+#cloud:before {
+	width: 180px; height: 180px;
+	top: -90px; right: 50px;
+	
+	border-radius: 200px;
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
+}
+
+.shadow {
+  width: 350px;
+  position: absolute; bottom: -10px; 
+  background: #000;
+  z-index: -1;
+  
+  box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
+  
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+
 }

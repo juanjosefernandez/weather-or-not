@@ -1,13 +1,9 @@
 import React from 'react';
 import Strip from '../Strip/Strip';
 import classes from './Conditions.module.css'
-const Conditions = (props) => {
-    // let dayOneData = props.responseObj.list[0];
-    // let dayTwoData;
-    // let dayThreeData;
-    // let dayFourData;
-    // let dayFiveData;
+import Rainbowfy from '../rainbowfy/rainbowfy';
 
+const Conditions = (props) => {
 
     return (
        <div className={classes.Wrapper}>

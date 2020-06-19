@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Conditions from '../Conditions/Conditions';
 import classes from './Multiday.module.css';
 
+
 const Multiday = () => {
 
     let [city, setCity] = useState('');
@@ -11,6 +12,14 @@ const Multiday = () => {
     // const uriEncodedCity = encodeURIComponent(city);
     let [responseObj, setResponseObj] = useState({});
     let [safe, setSafe] = useState(false);
+    let [unicorn, setUnicorn] = useState(false);
+
+
+    function pushCloud(e){
+        e.preventDefault();
+        console.log("printing ", e.target);
+        setUnicorn(true);
+    }
 
     function getWeather(e){
             e.preventDefault();
@@ -67,9 +76,8 @@ const Multiday = () => {
 
     return (
         <div>
-            <h2>Find Current Weather Conditions</h2>
                 <form onSubmit={getWeather}>
-                    <input
+                    <input className="citytext"
                         type="text"
                         placeholder="Enter City"
                         maxLength="50"
@@ -79,10 +87,10 @@ const Multiday = () => {
                             setCity(e.target.value)
                             }
                         }
-                        />
+                    />
                         <br></br>
+                        <button id="cloud" className={classes.Button} type="submit">Get Forecast</button>
 
-                    <button className={classes.Button} type="submit">Get Forecast</button>
 
                 </form>
 
