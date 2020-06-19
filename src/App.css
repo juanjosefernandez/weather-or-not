@@ -3,16 +3,18 @@
 }
 
 .Title {
-  font-size: 75px;
+  font-size: 50px;
   text-align: center; 
 }
 
 body {
   background: rgb(68, 109, 243);
+ 
+    
+  
+ 
 }
 
-/* html {
-  /* overflow: hidden; */
 
 #cloud2{
     position: absolute;
@@ -28,7 +30,6 @@ body {
   100% {top:100%; left:20%}
 }
 
-
 #sun{
   position: absolute;
   width:150px;
@@ -41,13 +42,6 @@ body {
   66% {top:30%; left:60%}
   100% {top:100%; left:100%}
 }
-#fish{
-  position: absolute;
-  width:500px;
-  height:200px;
-  animation: cloud 3s infinite;
-}
-
 
 
 #cloud {
@@ -70,7 +64,7 @@ body {
   /* animation: cloud 3s infinite; */
   
 }
-
+/* cloud button chunks of creation using CSS to build */
 #cloud:after, #cloud:before {
 	content: '';
 	position: absolute;
@@ -97,16 +91,17 @@ body {
 }
 
 .shadow {
-	width: 350px;
-	position: absolute; bottom: -10px; 
-	background: #000;
-	z-index: -1;
-	
-	box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
-	-moz-box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
-	-webkit-box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
-	
-	border-radius: 50%;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
+  width: 350px;
+  position: absolute; bottom: -10px; 
+  background: #000;
+  z-index: -1;
+  
+  box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 25px 8px rgba(0, 0, 0, 0.4);
+  
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+
 }

@@ -77,19 +77,6 @@ const Multiday = () => {
             <div>
             
 
-    <form>
-  <h1>How are you feeling today?</h1>
-  <input className="hide" type="checkbox" title="Happy" name="happy" id="happy"/>
-  <label for="happy" className="option-happy">Happy</label>
-  
-  <input className="hide" type="checkbox" title="Sad" name="sad" id="sad"/>
-  <label for="sad" className="option-sad">Sad</label>
-  
-  <input className="hide" type="checkbox" title="Meh" name="meh" id="meh"/>
-  <label for="meh" className="option-meh">Meh</label>
-    </form>
-
-
                     <form onSubmit={getMultiDay}>
                         <input className="citytext"
                             type="text"
@@ -99,16 +86,16 @@ const Multiday = () => {
                             value={city}
                             onChange={(e) => setCity(e.target.value)}
                             />
-                            {/* <br></br> */}
+                           
+                          
 
-                        <button id = "cloud" class={classes.Button} type="submit" onClick={pushCloud}>{unicorn ? "🦄":"Get Forecast"}</button>
+                        <button id = "cloud"  class={classes.Button} type="submit" onClick={pushCloud}>{unicorn ? "🦄":"Get Forecast"}</button>
 
-                        <span class='shadow'></span>
 
 
                     </form>
                     {/* second cloud code below */}
-                    {/* <div id = "cloud"><span class='shadow'></span></div> */}
+                    
 
              <Conditions
                 responseObj={responseObj}
