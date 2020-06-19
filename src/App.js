@@ -3,6 +3,8 @@ import Multiday from "./components/Multiday/Multiday";
 import Rainbowfy from 'react-rainbowfy';
 import './App.css';
 
+// Initial Comment in Phase 2 Branch
+
 function App() {
   return (
     <div className="App">
