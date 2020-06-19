@@ -1,20 +1,59 @@
-.StripOne{
-    background-color:red;
-}
-
-.StripTwo{
-    background-color: orange;
+.container{
+    background-color:rgb(23, 241, 245);
+     
     
-}
-
-.StripThree{
-    background-color: yellow
-}
-
-.StripFour{
-    background-color: green
-}
-
-.StripFive{
-    background-color: blue;
-}
+    }
+    
+    .temperature{
+        font-size: 30px;
+    }
+    
+    .StripOne{
+        background-color:rgb(244, 28, 60);
+        color: rgb(221, 227, 114);
+        padding: 10px;
+        letter-spacing: 3px;
+        text-align: center;
+        
+    }
+    
+    .zoom {
+            padding: 20px;
+            
+            transition: transform 1s; /* Animation */
+            /* width: 200px;
+            height: 200px; */
+            margin: 0 auto;
+          }
+          
+    .zoom:hover {
+            transform: scale(1.5); 
+    }
+    
+    .StripTwo{
+        background-color: rgb(234, 255, 7);
+        padding: 10px;
+        text-align: center;
+    
+    }
+    
+    .StripThree{
+        background-color: rgb(8, 215, 111);
+        padding: 10px;
+        text-align: center;
+    
+    }
+    
+    .StripFour{
+        background-color: rgb(55, 125, 247);
+        padding: 10px;
+        text-align: center;
+    
+    }
+    
+    .StripFive{
+        background-color: rgb(172, 32, 242);
+        padding: 10px;
+        text-align: center;
+    
+    }

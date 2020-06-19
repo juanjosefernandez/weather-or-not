@@ -1,16 +1,17 @@
-.Wrapper {
+/* .Wrapper {
     min-height: 100px;
     display: flex;
     flex-direction: column;
- }
+ } */
 
 
-.Small {
+/* .Small {
     color: red;
-}
+} */
 
 /* this code was pulled from
 https://www.w3schools.com/howto/howto_css_loader.asp */
+/* strip hover animation? */
 .Loader {
     border: 16px solid #f3f3f3;
     border-top: 16px solid rgb(90, 89, 89);

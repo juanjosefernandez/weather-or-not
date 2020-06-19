@@ -1,31 +1,54 @@
-.TextInput {
-    font-size: large;
-    border: 1px solid #EEEEEE;
-    padding: 5px;
-    border-radius: 3px;
-    display: block;
-    margin: 5px auto;
+
+.citytext{
+    /* display: inline-block; */
+    color: red;
 }
 
-.TextInput:focus {
+/* .TextInput {
+    font-size: xx-large;
+    border: 1px solid #f004dc;
+    padding: 5px;
+    border-radius: 3px;
+    display: flexbox;
+    margin: 5px auto;
+    
+} */
+
+/* .TextInput:focus {
     outline: none;
     border-color: #719ECE;
     box-shadow: 0 0 10px rgb(50, 100, 153);
-}
+} */
 
-.Radio {
+/* .Radio {
     font-size: small;
-}
+} */
 
 .Button {
     display: block;
-    margin: 10px auto;
-    padding: .5rem;
-    font-size: 1em;
-    background: darkcyan;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    margin: 5px auto;
+    /* background: rgb(8, 197, 240); */
+    /* border-radius: 150px; */
+    color:red;
+    /* cursor: pointer; */
+   /* cursor: url('http://icons.iconarchive.com/icons/goodstuff-no-nonsense/free-space/96/stars-icon.png'); */
+
+    margin: 100px;
+    border: 2px solid #f2f9fe;
+    padding: 20px 50px;
+    font-size: 25px;
+    font-weight: bold;
+    /* border-radius: 70% 40% 90% 20%;  */
+} 
+
+/* input of City */
+.textInput {
+    display: -moz-inline-box;
+    color: red;
+    padding: 20px;
+
 
 }
+
+
+    
+

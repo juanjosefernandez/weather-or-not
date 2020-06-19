@@ -2,22 +2,25 @@ import React from 'react';
 import './Strip.css'
 
 const Strip = (props) => {
-    let boolean = true;
-
+    let iconId = "";
+    if (props.safe){
+        iconId = props.responseObj.daily[props.day].weather[0].icon;
+    }
     return(
         <div > 
             <container>
                 <section className={props.whichStrip}>
-                <p>Hi Temperature:</p>
+                {/* <p>Hi Temperature, Lo Temp, Description, Day of week and date:</p> */}
                 {/* where we use the data from the API call, only render it IF the API call has been successful */}
-                {props.safe ? 'safe' : 'unsafe'}
-                {props.safe ?  JSON.stringify(props.responseObj.daily[0].temp.day) : ""}
-                {props.safe ?  JSON.stringify(props.responseObj.daily[0].weather[0].description) : ""}
-
-                {/* <p>{JSON.stringify(props.responseObj)}</p> */}
-                <p>Lo Temperature</p>
-                <p>Weather Conditions Description</p>
-                <p>Day of the Week + Date</p>
+                {/* <p>Safe/Unsafe: {props.safe ? 'safe' : 'unsafe'} </p> */}
+                <p>Lo: {props.safe ?  JSON.stringify(props.responseObj.daily[props.day].temp.min) + "°F" : ""}</p>
+                <p>Hi: {props.safe ?  JSON.stringify(props.responseObj.daily[props.day].temp.max) + "°F"  : ""}</p>
+                <p>Main Description: {props.safe ?  JSON.stringify(props.responseObj.daily[props.day].weather[0].main) : ""}</p>
+                <p>Sub Description: {props.safe ?  JSON.stringify(props.responseObj.daily[props.day].weather[0].description) : ""}</p>
+                {/* <p>Icon ID: {iconId}</p> */}
+                <img src={"http://openweathermap.org/img/wn/"+ iconId + "@2x.png"}></img>
+                {/* {props.safe ?  JSON.stringify(props.responseObj.daily[props.day].weather[0].icon) : ""} */}
+                
                 </section>
             </container>    
         </div>
