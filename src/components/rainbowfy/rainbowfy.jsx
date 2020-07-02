@@ -28,7 +28,8 @@ const Rainbowfy = ({ children, font, fontSize, fontWeight, start}) => {
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
-		animation: 1s linear 0s infinite normal none running ${rainbow};
+		animation: 4s linear 0s infinite normal none running ${rainbow};
+		
 	`
 	return <Rainbowed>{children}</Rainbowed>;
 };

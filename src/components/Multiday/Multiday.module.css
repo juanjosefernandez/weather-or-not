@@ -1,8 +1,37 @@
 
-.citytext{
-    /* display: inline-block; */
+/* input of City */
+.textInput {
+    display: inline-block;
+    color: red;
+    width: 15%;
+    height: 280%;
+    /* border: 2px solid red; */
+    border-radius: 2px;
+    /* background-color: white; */
+    background-image: url('https://cdn.hipwallpaper.com/i/65/32/aZpniK.jpg');
+    background-position: 400px 0px;
+    background-repeat: repeat-x;
+    padding: 50px 100px;
+    border-radius: 20px;
+    font-family: inherit;
+    text-align: center;
+    margin: auto;
+}
+
+
+.placeholder{ 
+        color: red;
+      
+
+}
+
+.text {
     color: red;
 }
+
+
+
+
 
 /* .TextInput {
     font-size: xx-large;
@@ -32,22 +61,16 @@
     /* cursor: pointer; */
    /* cursor: url('http://icons.iconarchive.com/icons/goodstuff-no-nonsense/free-space/96/stars-icon.png'); */
 
-    margin: 100px;
+    margin: 0 auto;
     border: 2px solid #f2f9fe;
     padding: 20px 50px;
     font-size: 25px;
-    font-weight: bold;
+    
+    font-family: inherit;
     /* border-radius: 70% 40% 90% 20%;  */
 } 
 
-/* input of City */
-.textInput {
-    display: -moz-inline-box;
-    color: red;
-    padding: 20px;
 
-
-}
 
 
     
