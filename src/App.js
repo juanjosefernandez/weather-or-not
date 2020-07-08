@@ -3,7 +3,7 @@ import Multiday from "./components/Multiday/Multiday";
 import Rainbowfy from 'react-rainbowfy';
 import './App.css';
 
-// Initial Comment in Phase 2 Branch
+// Initial Comment in Phase 2 Branc
 
 function App() {
   return (
@@ -16,10 +16,10 @@ function App() {
 
       <Multiday/>  
 
-      {/* <div id="sky">
+      <div id="sky">
         <img id="cloud2"src="https://pngimage.net/wp-content/uploads/2018/05/cute-cloud-png-1.png"></img>
         <img id="sun"src="https://media0.giphy.com/media/F0HOpzaUXInKxPLtr9/source.gif">
-      </img></div> */}
+      </img></div>
 
     </div>
   );

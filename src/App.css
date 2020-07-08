@@ -3,14 +3,15 @@
 }
 
 .Title {
-  font-size: 50px;
+  font-size: 70px;
   text-align: center; 
 }
 
 body {
-  background: rgb(68, 109, 243);
+  /* background: rgb(68, 109, 243); */
  
-    
+   
+    background-image: url('https://i.imgur.com/hlbOu0G.gif');
   
  
 }
@@ -55,8 +56,8 @@ body {
 	background: -o-linear-gradient(top, #f2f9fe 5%, #d6f0fd 100%);
 	border-radius: 100px;
 	-webkit-border-radius: 100px;
-	-moz-border-radius: 100px;
-  margin: 120px auto 20px;
+  -moz-border-radius: 100px;
+  margin-bottom: 10px;
   position: relative;
   
 
@@ -90,7 +91,8 @@ body {
 	-moz-border-radius: 200px;
 }
 
-.shadow {
+/* wish i c ould  */
+/* .shadow {
   width: 350px;
   position: absolute; bottom: -10px; 
   background: #000;
@@ -104,4 +106,4 @@ body {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
 
-}
+} */

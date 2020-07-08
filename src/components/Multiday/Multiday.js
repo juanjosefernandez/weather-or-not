@@ -79,7 +79,7 @@ const Multiday = () => {
                 <form onSubmit={getWeather}>
                     <input className="citytext"
                         type="text"
-                        placeholder="Enter City"
+                        placeholder="What CITY?"
                         maxLength="50"
                         className={classes.textInput}
                         value={city}
@@ -89,7 +89,9 @@ const Multiday = () => {
                         }
                     />
                         <br></br>
-                        <button id="cloud" className={classes.Button} type="submit">Get Forecast</button>
+                        <br></br>
+
+                        <button id="cloud" className={classes.Button} type="submit">Get WEATHER!</button>
 
 
                 </form>
