@@ -1,7 +1,8 @@
 
 .citytext{
     /* display: inline-block; */
-    color: red;
+    color: green;
+    margin: auto;
 }
 
 /* .TextInput {
